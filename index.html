@@ -21,136 +21,97 @@
 		<div class="slides">
 			<section>
 				<h1>
-					Beautiful presentations
+					Pandas
 				</h1>
-				<h2>New features</h2>
-				<ul>
-					<li>Nerd wqqewq</li>
-					<li><code class="js">(inline) => code("highlighting")</code></li>
-					<li>Automatic QR Code generation</li>
-					<li>and much more!</li>
-				</ul>
+				<img src="https://media.licdn.com/dms/image/D5612AQEWcIzLdRQU-A/article-cover_image-shrink_600_2000/0/1675162288031?e=2147483647&v=beta&t=CfX23EHDVXTRYxE-4f_RgSbqC_1t756MCCPq8bV2fS4"
+				 width="300" align="center">
 			</section>
 			<section>
 				<h1>
-					Custom TokyoNight theme
+					Что такое pandas
 				</h1>
-				<h2 class="fragment">That has</h2>
-				<h3 class="fragment">Multi</h3>
-				<h4 class="fragment">HHHHHH</h4>
-				<h5 class="fragment">Heading</h5>
-				<h6 class="fragment">Coloring</h6>
-				<h6>Thanks to this project <a href="https://github.com/tcmmichaelb139/obsidian-tokyonight"></a> for the
-					colorscheme!</h6>
+				<h3 class="fragment">это библиотека Python для обработки и анализа структурированных данных,
+					 ее название происходит от «panel data» («панельные данные»). Панельными данными называют информацию,
+					  полученную в результате исследований и структурированную в виде таблиц. Для работы с такими массивами данных и создан Pandas.</h3>
+				
+				
 			</section>
 			<section>
 				<section>
-					<h1>Tailwind CSS</h1>
+					<h1>Основные возможности библиотеки:</h1>
 					<div class="grid grid-cols-2 gap-8">
-						<div>
-							<h5>Lorem, ipsum.</h5>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quod fugiat harum modi laboriosam
-								dignissimos, maxime possimus? Error, nihil in.</p>
-						</div>
-						<div>
-							<h5>Lorem, ipsum.</h5>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quod fugiat harum modi laboriosam
-								dignissimos, maxime possimus? Error, nihil in.</p>
-						</div>
-						<div class="col-span-2">
-							<h5>Lorem, ipsum.</h5>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quod fugiat harum modi laboriosam
-								dignissimos, maxime possimus? Error, nihil in.</p>
-						</div>
-					</div>
-				</section>
-				<section>
-					<h1>Custom classes</h1>
-					<div class="grid grid-cols-3 gap-8">
-						<div class="border-r">
-							<h5>border-r</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, soluta!</p>
-						</div>
-						<div class="border-o">
-							<h5>border-o</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, soluta!</p>
+						<div class="border-y">
+							
+							<p>Объект DataFrame для манипулирования индексированными массивами двумерных данных</p>
 						</div>
 						<div class="border-y">
-							<h5>border-y</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, soluta!</p>
+							
+							<p>Инструменты для обмена данными между структурами в памяти и файлами различных форматов</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					
+					<div class="grid grid-cols-3 gap-8">
+						<div class="border-o">
+							
+							<p>Срез данных по значениям индекса, расширенные возможности индексирования, выборка из больших наборов данных</p>
+						</div>
+						<div class="border-y">
+							<p>Работа с временными рядами: формирование временных периодов и изменение интервалов и так далее</p>
+							
+						</div>
+						<div class="border-y">
+							
+							<p>Встроенные средства совмещения данных и способы обработки отсутствующей информации</p>
 						</div>
 					</div>
 				</section>
 			</section>
 			<section>
 				<section data-auto-animate>
-					<h1>New code highlighting!</h1>
+					<h1>Где используется pandas</h1>
 					<div>
-						Now also has Tokyo Night <code>highlight.js</code> highlighting implementation
+						<h3>библиотекa pandas применяется для обработки и анализа табличных данных</h3>
 					</div>
-					<pre><code data-trim data-noescape>
-var foo = {
-    bar: function () {
-             alert("Hello, World!");
-         }
-};	
-					</code></pre>
+					
 				</section>
 				<section data-auto-animate>
-					<h1>New code highlighting!</h1>
-					<h5>Inline code highlighting is now also supported!</h5>
-					<p>
-						Just wrap your code with <code>&lt;code&gt;</code> tag and get
-						highlighting like this <code class="js">const foo = () => {return bar}</code>!
-					</p>
+					
+					<h3>Пакет прежде всего предназначен для очистки и первичной оценки данных по общим показателям, например среднему значению, квантилям и так далее</h3>
+					
 				</section>
 			</section>
 			<section>
-				<h1>Mermaid for beautiful diagrams!</h1>
-				<div class="mermaid">
-					<pre>
-						erDiagram
-    CUSTOMER ||--o{ ORDER : ""
-    CUSTOMER {
-        string name
-        string custNumber
-        string sector
-    }
-    ORDER ||--|{ LINE-ITEM : contains
-    ORDER {
-        int orderNumber
-        string deliveryAddress
-    }
-    LINE-ITEM {
-        string productCode
-        int quantity
-        float pricePerUnit
-    }
-    ORDER ||--|{ STUDENT : contains
-    STUDENT {
-        int orderNumber
-        string deliveryAddress
-    }
-						</pre>
-				</div>
-				<h4>Check documentation <a href="https://mermaid.js.org/config/usage.html">here</a>!</h4>
+				<section>
+					<h1>Примеры использования</h1>
+				<br>
+				<h3>Диаграмма</h3>
+				<pre><code>df = pd.DataFrame(np.random.rand(10, 5), columns=list('ABCDE'))
+					df.plot.bar(stacked=True)
+					plt.show()</code></pre>
+				</section>
+			<section>
+				<h3>Гистограмма</h3>
+				<br>
+                          <pre><code>data = pd.Series(np.random.normal(size=100))
+                          data.hist(grid=False)
+                          plt.show()</code></pre>
 			</section>
 			<section>
-				<h1>Now supports Nerd font icons!</h1>
-				<div>Nerdy project that adds icons to font itself</div>
-				<h6>Checkout their site for icons like this <a href="https://www.nerdfonts.com/">󰖟</a>!
-				</h6>
+				<h3>Кривые</h3>
+				<pre><code>
+					import pandas as pd
+					import matplotlib.pyplot as plt
+					import numpy as np
+					
+					df = pd.DataFrame(np.random.randn(100, 5), columns=list('ABCDE'))
+					df=df.cumsum() # Return cumulative sum over a DataFrame or Series axis
+					df.plot()
+					plt.show()</code></pre>
 			</section>
-			<section>
-				<h1>Now supports automatic QRCode generation!</h1>
-				<div>With GoQR you can just add data-type and alt attributes to your <code
-						class="html">&lt;img alt="https://goqr.me/" data-type="qrcode" / &gt;</code> tag!</div>
-				<img class="r-stretch" alt="https://goqr.me/" data-type="qrcode" />
-				</h6>
 			</section>
-			<section>
-				<h1>New changes on the way!</h1>
-			</section>
+				
 		</div>
 	</div>
 
