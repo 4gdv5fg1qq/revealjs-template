@@ -21,32 +21,46 @@
 		<div class="slides">
 			<section>
 				<h1>
-					Pandas
+					LSP (протокол языкового сервера)
 				</h1>
-				<img src="https://media.licdn.com/dms/image/D5612AQEWcIzLdRQU-A/article-cover_image-shrink_600_2000/0/1675162288031?e=2147483647&v=beta&t=CfX23EHDVXTRYxE-4f_RgSbqC_1t756MCCPq8bV2fS4"
-				 width="300" align="center">
-			</section>
-			<section>
-				<h1>
-					Что такое pandas
-				</h1>
-				<h3 class="fragment">это библиотека Python для обработки и анализа структурированных данных,
-					 ее название происходит от «panel data» («панельные данные»). Панельными данными называют информацию,
-					  полученную в результате исследований и структурированную в виде таблиц. Для работы с такими массивами данных и создан Pandas.</h3>
-				
 				
 			</section>
 			<section>
 				<section>
-					<h1>Основные возможности библиотеки:</h1>
+				<h1>
+					Что такое LSP
+				</h1>
+			
+				<h3 class="fragment">это протокол языкового сервера, набор правил, по которому среда программирования связывается 
+					с сервером и получает от него инструкции. Протокол нужен, чтобы программы для разработки могли автоматически 
+					подставлять данные в код</h3>
+				
+				</section>
+				<section>
+				<h3 class="fragment">Протокол LSP разработала компания Microsoft для своего редактора кода Visual Studio Code. 
+				В VS Code технология встроена изначально, но протокол можно использовать и в других средах и редакторах</h3>
+				
+
+				</section>
+				<section>
+					<h3 class="fragment">Технически LSP похож на протокол HTTP и тоже используется, чтобы обмениваться данными между программой и сервером. Но LSP применяют в первую
+					 очередь для IDE и редакторов кода, а общается он с языковым сервером — специальной программой на сервере какого-нибудь проекта, которая отвечает за связь с 
+					 редактором кода</h3>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Как это работает</h1>
+					<section><h4 class="fragment">Технически LSP связывается с сервисом с помощью JSON-RPC — архитектуры, которая позволяет удаленно передавать информацию в формате JSON.
+						Эта архитектура похожа на REST, которая используется в веб-разработке. Разница в том, что основной узел в JSON-RPC — вызов процедуры. Работает это так</h3></section>
 					<div class="grid grid-cols-2 gap-8">
 						<div class="border-y">
 							
-							<p>Объект DataFrame для манипулирования индексированными массивами двумерных данных</p>
+							<p>1. LSP связывается с удаленным сервером и передает данные с помощью JSON-RPC. Это полезные сведения в формате JSON, которые оформлены по спецификации RPC</p>
 						</div>
 						<div class="border-y">
 							
-							<p>Инструменты для обмена данными между структурами в памяти и файлами различных форматов</p>
+							<p>2. В данных LSP передает какие-то параметры, запрашивает ответ и требует вызвать какую-то функцию</p>
 						</div>
 					</div>
 				</section>
@@ -55,60 +69,98 @@
 					<div class="grid grid-cols-3 gap-8">
 						<div class="border-o">
 							
-							<p>Срез данных по значениям индекса, расширенные возможности индексирования, выборка из больших наборов данных</p>
+							<p>3. Сервер получает данные. Если он верно настроен, то поймет их и передаст информацию в ответ — нужные параметры или результаты выполнения требуемой функции</p>
 						</div>
 						<div class="border-y">
-							<p>Работа с временными рядами: формирование временных периодов и изменение интервалов и так далее</p>
+							<p>4. Ответ сервера тоже приходит с помощью JSON-RPC. LSP получает ответ и «понимает» его</p>
 							
 						</div>
 						<div class="border-y">
 							
-							<p>Встроенные средства совмещения данных и способы обработки отсутствующей информации</p>
+							<p>5. Среда реагирует на новую информацию, которая появилась благодаря LSP, — например, предлагает пользователю закончить команду определенным образом</p>
 						</div>
 					</div>
 				</section>
 			</section>
 			<section>
 				<section data-auto-animate>
-					<h1>Где используется pandas</h1>
+					<h1>Реализации LSP на Python</h1>
 					<div>
-						<h3>библиотекa pandas применяется для обработки и анализа табличных данных</h3>
+						<h3>Установка : Вы можете установить его с помощью:</h3>
 					</div>
+					<pre><code>
+						python -m pip install lsprotocol
+					</code></pre>
+					<h3>Пример использования :</h3>
+					<pre><code>from lsprotocol import types
+
+					position = types.Position(line=10, character=3)</code></pre>
+				
 					
 				</section>
 				<section data-auto-animate>
-					
-					<h3>Пакет прежде всего предназначен для очистки и первичной оценки данных по общим показателям, например среднему значению, квантилям и так далее</h3>
+					<h1><pre><code>pip install python-language-server</code></pre></h1>
+					<h4>Поддерживает различные дополнительные поставщики для линтинга и форматирования, расширяя свои возможности за пределы базовой функциональности</h4>
 					
 				</section>
 			</section>
 			<section>
 				<section>
-					<h1>Примеры использования</h1>
+					<h1>Языковые серверы для JavaScript</h1>
 				<br>
-				<h3>Диаграмма</h3>
-				<pre><code>df = pd.DataFrame(np.random.rand(10, 5), columns=list('ABCDE'))
-					df.plot.bar(stacked=True)
-					plt.show()</code></pre>
+				<h4>Для разработки JavaScript обычно используются несколько языковых серверов:</h4>
+				<ul></ul>
+				<h5><li>Сервер языка TypeScript (tsserver) : это основной сервер, используемый Visual Studio Code (VSCode) для JavaScript и TypeScript.
+					 Он предоставляет такие функции, как IntelliSense, навигация по коду и отчеты об ошибках.
+					 Хотя VSCode напрямую использует , его также можно использовать в других редакторах через 'LSPtsserver'</h5></li>
 				</section>
-			<section>
-				<h3>Гистограмма</h3>
-				<br>
-                          <pre><code>data = pd.Series(np.random.normal(size=100))
-                          data.hist(grid=False)
-                          plt.show()</code></pre>
+				<section>
+					<h5><li>Flow : Разработанный Facebook, Flow — еще один вариант, который обеспечивает статическую проверку типов для JavaScript. Его можно интегрировать с различными редакторами с помощью LSP</h5></li>
+					<h5><li>Quick-lint-js : это легкий инструмент линтинга, который также может служить языковым сервером для JavaScript, обеспечивая быструю обратную связь во время разработки.</h5></li></ol>
+				</section>
 			</section>
 			<section>
-				<h3>Кривые</h3>
-				<pre><code>
-					import pandas as pd
-					import matplotlib.pyplot as plt
-					import numpy as np
-					
-					df = pd.DataFrame(np.random.randn(100, 5), columns=list('ABCDE'))
-					df=df.cumsum() # Return cumulative sum over a DataFrame or Series axis
-					df.plot()
-					plt.show()</code></pre>
+				<section>
+				<h3>Реализация LSP в JavaScript</h3>
+				<br>
+                    <pre><code>
+						const {
+						TextDocuments,
+						createConnection,
+						} = require('vscode-languageserver');
+						  
+						const { TextDocument } = require('vscode-languageserver-textdocument');
+						  
+						const connection = createConnection();
+						const documents = new TextDocuments(TextDocument);
+						  
+						connection.onInitialize(() => ({
+						capabilities: {
+							textDocumentSync: documents.syncKind,
+						},
+						}));
+						  
+						  documents.listen(connection);
+						  connection.listen();</code></pre>
+			</section>
+				<section>
+					<h3>Пример диагностики</h3>
+					<h4>Чтобы отправлять диагностическую информацию при изменении содержимого документа, можно расширить предыдущий пример:</h4>
+					<pre>
+						<code>
+							documents.onDidChangeContent(change => {
+								connection.sendDiagnostics({
+								  uri: change.document.uri,
+								  diagnostics: getDiagnostics(change.document),
+								});
+							  });
+						</code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<h2>The End</h2>
+				<img src="https://code.visualstudio.com/assets/api/language-extensions/language-server-extension-guide/lsp-languages-editors.png">
 			</section>
 			</section>
 				
